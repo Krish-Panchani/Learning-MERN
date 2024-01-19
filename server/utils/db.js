@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mean-crud'; //Change this to your own DB
+const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mern_admin'; //Change this to your own DB
 
 const connectDB = async () => {
     try{
