@@ -14,7 +14,12 @@ const home = async (req, res) => {
 const reg = async (req, res) => {
     try {
         console.log(req.body);
-        const {username, email, phone, password} = req.body;
+        const {
+            username, 
+            email, 
+            phone, 
+            password
+        } = req.body;
 
         const userExist = await User.findOne({email});
 
@@ -29,11 +34,20 @@ const reg = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
         
 
-        const usercreated = await User.create({username, email, phone, password: hashedPassword});
+        const userCreated = await User.create({
+            username, 
+            email, 
+            phone, 
+            password: hashedPassword
+        });
 
         res
             .status(200)
-            .json({msg: usercreated});
+            .json({
+                msg: userCreated,
+                token: await userCreated.generateToken(),
+                userId: userCreated._id.toString(),
+            });
 
 
     } catch (error) {
