@@ -10,5 +10,6 @@ const controller = require('../controller/auth-controller');
 
 router.route('/').get(controller.home);
 router.route('/register').post(controller.reg);
+router.route('/login').post(controller.login);
 
 module.exports = router;
