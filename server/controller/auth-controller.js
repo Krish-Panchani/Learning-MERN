@@ -22,6 +22,7 @@ const reg = async (req, res) => {
             password
         } = req.body;
 
+        //Check if user exists
         const userExist = await User.findOne({email});
 
         if (userExist) {
@@ -45,17 +46,18 @@ const reg = async (req, res) => {
         res
             .status(200)
             .json({
-                msg: userCreated,
+                msg: userCreated || "User Created Successfully",
                 token: await userCreated.generateToken(),
                 userId: userCreated._id.toString(),
             });
 
 
     } catch (error) {
-        console.log(error);
-        res
-            .status(500)
-            .json({message: error});
+        // console.log(error);
+        // res
+        //     .status(500)
+        //     .json({message: error});
+        next(error);
     }
 }
 

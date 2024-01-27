@@ -3,11 +3,15 @@ const express = require('express');
 const app = express();
 const router = require('./router/auth-router');
 const connectDB = require('./utils/db');
+const errorMiddleware = require('./middleware/error-middleware');
+
 
 app.use(express.json());
 
 //?mounting the router
 app.use('/api/auth', router);
+
+app.use(errorMiddleware);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

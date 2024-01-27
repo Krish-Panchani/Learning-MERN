@@ -29,4 +29,20 @@ const registerSchema = z.object({
     .max(10, {message: "Phone must be at most 10 characters long"}),
 });
 
-module.exports = registerSchema;
+const loginSchema = z.object({
+
+    email: z
+    .string({required_error: "Email is Required"})
+    .trim()
+    .email({message: "Invalid Email"})
+    .min(6, {message: "Email must be at least 6 characters long"})
+    .max(100, {message: "Email must be at most 100 characters long"}),
+
+    password: z
+    .string({required_error: "Password is Required"})
+    // .trim()
+    .min(6, {message: "Password must be at least 6 characters long"})
+    .max(100, {message: "Password must be at most 100 characters long"}),
+});
+
+module.exports = registerSchema, loginSchema;
