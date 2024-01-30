@@ -1,6 +1,9 @@
+body{
+    background-color: rgb(9, 6, 17);
+}
 .container{
     max-width: 140rem;
-    padding: 4.2rem 2.4rem;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -11,8 +14,33 @@ ul{
 }
 li{
     list-style: none;
+    
 }
 
 li a {
     text-decoration: none;
+    color: white;
+}
+.logo-brand{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+
+}
+NavLink{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    list-style: none;
+}
+
+h1{
+    color: white;
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
 }
