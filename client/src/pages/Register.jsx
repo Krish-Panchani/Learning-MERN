@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./register.css";
 
 export const Register = () => {
   const [user, setUser] = useState({
@@ -25,8 +26,6 @@ export const Register = () => {
     console.log(user);
   };
 
-  //  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical
-
   return (
     <>
       <section>
@@ -38,7 +37,6 @@ export const Register = () => {
                   src="/images/register.png"
                   alt="a nurse with a cute look"
                   width="400"
-                  height="500"
                 />
               </div>
               {/* our main registration code  */}
